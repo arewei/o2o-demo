@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>订单相关DEMO</title>
+</head>
+<body>
+
+	1. 提交订单
+	<form action="http://localhost:8080/o2o-demo/api/order!create.action" method="post">
+		版本：
+		<input type="text" name="ver" value="1.0">
+		<br>
+		手机：
+		<input type="text" name="mobile" value="18659255016">
+		<br>
+		请求内容：
+		<input type="text" name="body"
+			value='{"productId":1,"carLicenseNo":"闽D12345","lng":24.45259,"lat":118.079932,"addr":"洗车地址","serviceDate":"2015-01-01","serviceTime":"12:00"}'
+			size="150">
+		<br>
+		验证：
+		<input type="text" name="sign" value="d4535430b87e148b01546e08b94d19cd" size="32">
+		<br>
+		<input type="submit" name="提交">
+	</form>
+	<br>
+	<hr>
+	<br>
+
+
+	2. 洗车员工接单
+	<form action="http://localhost:8080/o2o-demo/api/order!receive.action" method="post">
+		版本：
+		<input type="text" name="ver" value="1.0">
+		<br>
+		手机：
+		<input type="text" name="mobile" value="18659255000">
+		<br>
+		请求内容：
+		<input type="text" name="body" value='{"orderNo":"20141213124704848"}' size="150">
+		<br>
+		验证：
+		<input type="text" name="sign" value="23c9f6a6f648f1edfbd407db982f5668" size="32">
+		<br>
+		<input type="submit" name="提交">
+	</form>
+	<br>
+	<hr>
+	<br>
+
+
+	3. 改变订单状态，START_OFF：出发，WASHING：洗车中，FINISH_WASHING：洗完
+	<form action="http://localhost:8080/o2o-demo/api/order!changeState.action" method="post">
+		版本：
+		<input type="text" name="ver" value="1.0">
+		<br>
+		手机：
+		<input type="text" name="mobile" value="18659255000">
+		<br>
+		请求内容：
+		<input type="text" name="body" value='{"orderNo":"20141213124704848","state":"START_OFF"}' size="150">
+		<br>
+		验证：
+		<input type="text" name="sign" value="d5dbd18db7b1e480c570911710a1b600" size="32">
+		<br>
+		<input type="submit" name="提交">
+	</form>
+	<br>
+	<hr>
+	<br>
+
+
+	4. 上传订单车辆图片，type=BEFORE_WASH，表示洗车前； type=AFTER_WASH，表示洗车后，type为空，默认洗车前。
+	<form
+		action='http://localhost:8080/o2o-demo/api/order!upload.action?ver=1.0&mobile=18659255000&body={"type":"BEFORE_WASH","orderNo":"20141213124704848"}&sign=b9cd8bb5eb922d0cd03b338106d326a4'
+		method="post" enctype="multipart/form-data">
+		post
+		action的url：http://localhost:8080/o2o-demo/api/order!upload.action?ver=1.0&mobile=18659255016&body={"type":"BEFORE_WASH","orderNo":"20141213124704848"}&sign=b9cd8bb5eb922d0cd03b338106d326a4
+		<br>
+		<br>
+		图片文件：
+		<input type="file" name="file">
+		<br>
+		<input type="submit" name="提交">
+	</form>
+	<br>
+	<hr>
+	<br>
+
+
+	5. 支付订单
+	<br>
+	（1）参数id，指定要支付的订单
+	<br>
+	（2）orderPays，JSON数组，指定采用的支付的各种方式和金额，payAmount=支付的金额，payType=支付的方式，couponId=采用的洗车卷的id
+	<br>
+	（3）支付方式，BALANCE=余额支付，ALIPAY=支付宝，UPMP=银联支付，COUPON=洗车卷支付，前三种支付方式，需指定支付的金额；洗车卷，需指定洗车卷的id
+	<br>
+	（4）所包含的支付方式，金额总和，必须等于洗车金额
+	<form action="http://localhost:8080/o2o-demo/api/order!pay.action" method="post">
+		版本：
+		<input type="text" name="ver" value="1.0">
+		<br>
+		手机：
+		<input type="text" name="mobile" value="18659255016">
+		<br>
+		请求内容：
+		<input type="text" name="body"
+			value='{"id":3,"orderPays":[{"payAmount":600,"payType":"BALANCE"},{"payAmount":900,"payType":"ALIPAY"},{"couponId":3,"payType":"COUPON"}]}'
+			size="150">
+		<br>
+		验证：
+		<input type="text" name="sign" value="d5dbd18db7b1e480c570911710a1b600" size="32">
+		<br>
+		<input type="submit" name="提交">
+	</form>
+	<br>
+	<hr>
+	<br>
+
+	6. 查找订单
+	<form action="http://localhost:8080/o2o-demo/api/order!find.action" method="post">
+		版本：
+		<input type="text" name="ver" value="1.0">
+		<br>
+		手机：
+		<input type="text" name="mobile" value="18659255016">
+		<br>
+		请求内容：
+		<input type="text" name="body" value='' size="150">
+		<br>
+		验证：
+		<input type="text" name="sign" value="d5dbd18db7b1e480c570911710a1b600" size="32">
+		<br>
+		<input type="submit" name="提交">
+	</form>
+	<br>
+	<hr>
+	<br>
+
+
+</body>
+</html>
