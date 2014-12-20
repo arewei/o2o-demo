@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>客户相关DEMO</title>
+</head>
+<body>
+	1. 增加客户车辆（一手机，一车牌，UNIQUE索引）
+	<form action="http://localhost:8080/o2o-demo/api/customer!addCar.action" method="post">
+		版本：
+		<input type="text" name="ver" value="1.0">
+		<br>
+		手机：
+		<input type="text" name="mobile" value="18659255016">
+		<br>
+		请求内容：
+		<input type="text" name="body" value='{"carModel":"BMW 530Li","licenseNo":"闽D12345","isDefault":0}' size="80">
+		<br>
+		验证：
+		<input type="text" name="sign" value="930ae03309eb62eea1994a81eb7edae9" size="32">
+		<br>
+		<input type="submit" name="提交">
+	</form>
+	<br>
+	<hr>
+	<br>
+
+	2. 删除客户车辆
+	<form action="http://localhost:8080/o2o-demo/api/customer!removeCar.action" method="post">
+		版本：
+		<input type="text" name="ver" value="1.0">
+		<br>
+		手机：
+		<input type="text" name="mobile" value="18659255016">
+		<br>
+		请求内容：
+		<input type="text" name="body" value='{"customerCarId":1}' size="80">
+		<br>
+		验证：
+		<input type="text" name="sign" value="679d3d16a14083da1f5800e0fe91dee9" size="32">
+		<br>
+		<input type="submit" name="提交">
+	</form>
+	<br>
+	<hr>
+	<br>
+
+
+	3. 设置客户的默认车辆
+	<form action="http://localhost:8080/o2o-demo/api/customer!setDefaultCar.action" method="post">
+		版本：
+		<input type="text" name="ver" value="1.0">
+		<br>
+		手机：
+		<input type="text" name="mobile" value="18659255016">
+		<br>
+		请求内容：
+		<input type="text" name="body" value='{"customerCarId":7}' size="80">
+		<br>
+		验证：
+		<input type="text" name="sign" value="3269629c0e71262ca96d6221220912b8" size="32">
+		<br>
+		<input type="submit" name="提交">
+	</form>
+	<br>
+	<hr>
+	<br>
+
+	4. 获取客户的车辆
+	<form action="http://localhost:8080/o2o-demo/api/customer!findCar.action" method="post">
+		版本：
+		<input type="text" name="ver" value="1.0">
+		<br>
+		手机：
+		<input type="text" name="mobile" value="18659255016">
+		<br>
+		请求内容：
+		<input type="text" name="body" value='' size="80">
+		<br>
+		验证：
+		<input type="text" name="sign" value="d17a038e7cd27718eb2f236e349bc53b" size="32">
+		<br>
+		<input type="submit" name="提交">
+	</form>
+	<br>
+	<hr>
+	<br>
+	
+	5. 获取客户的主页信息
+	<form action="http://localhost:8080/o2o-demo/api/customer!home.action" method="post">
+		版本：
+		<input type="text" name="ver" value="1.0">
+		<br>
+		手机：
+		<input type="text" name="mobile" value="18659255016">
+		<br>
+		请求内容：
+		<input type="text" name="body" value='' size="80">
+		<br>
+		验证：
+		<input type="text" name="sign" value="d17a038e7cd27718eb2f236e349bc53b" size="32">
+		<br>
+		<input type="submit" name="提交">
+	</form>
+	<br>
+	<hr>
+	<br>
+	
+	6. 获取客户的充值和消费记录
+	<form action="http://localhost:8080/o2o-demo/api/customer!findDepositAndConsume.action" method="post">
+		版本：
+		<input type="text" name="ver" value="1.0">
+		<br>
+		手机：
+		<input type="text" name="mobile" value="18659255016">
+		<br>
+		请求内容：
+		<input type="text" name="body" value='' size="80">
+		<br>
+		验证：
+		<input type="text" name="sign" value="d17a038e7cd27718eb2f236e349bc53b" size="32">
+		<br>
+		<input type="submit" name="提交">
+	</form>
+	<br>
+	<hr>
+	<br>
+
+
+
+</body>
+</html>
