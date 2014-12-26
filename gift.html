@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>送洗车卷相关DEMO</title>
+</head>
+<body>
+
+	1. 送个洗车
+	<form action="http://localhost:8080/o2o-demo/api/gift!send.action" method="post">
+		版本：
+		<input type="text" name="ver" value="1.0">
+		<br>
+		手机：
+		<input type="text" name="mobile" value="18659255016">
+		<br>
+		请求内容：
+		<input type="text" name="body" value='{"unit":5,"qty":10,"receiverMobile":"18659255017","msg":"很方便，推荐给您~"}' size="80">
+		<br>
+		验证：
+		<input type="text" name="sign" value="3c21b4e5916fea71ee6018ed037fab13" size="32">
+		<br>
+		<input type="submit" name="提交">
+	</form>
+	<br>
+	<hr>
+	<br>
+
+
+	2. 查找送洗车记录，
+	<br>
+	（1）如果type=SEND，则查找客户送出去的洗车
+	<br>
+	（2）如果type=RECEIVE，则查找其他客户送的洗车
+	<form action="http://localhost:8080/o2o-demo/api/gift!find.action" method="post">
+		版本：
+		<input type="text" name="ver" value="1.0">
+		<br>
+		手机：
+		<input type="text" name="mobile" value="18659255016">
+		<br>
+		请求内容：
+		<input type="text" name="body" value='{"type":"SEND","currentPageNum":1,"pageSize":10}' size="80">
+		<br>
+		验证：
+		<input type="text" name="sign" value="dfd28e8459065506b5d566a9352bf5c4" size="32">
+		<br>
+		<input type="submit" name="提交">
+	</form>
+	<br>
+	<hr>
+	<br>
+
+
+</body>
+</html>
