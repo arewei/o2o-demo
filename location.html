@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>地理位置相关DEMO</title>
+</head>
+<body>
+	1. 上报地理位置
+	<br>
+	（1）state：ONLINE=上线接单，OFFLINE=下线。ONLINE时，必须指定经纬度
+	<br>
+	<form action="http://localhost:8080/o2o-demo/api/location!report.action" method="post">
+		版本：
+		<input type="text" name="ver" value="1.0">
+		<br>
+		手机：
+		<input type="text" name="mobile" value="18659255000">
+		<br>
+		请求内容：
+		<input type="text" name="body" value='{"lng":118.079932,"lat":24.45259,"state":"ONLINE"}' size="80">
+		<br>
+		验证：
+		<input type="text" name="sign" value="bd886ad29635b0a15b6a3fd919941438" size="32">
+		<br>
+		<input type="submit" name="提交">
+	</form>
+	<br>
+	<hr>
+	<br>
+
+	2. 删除地理位置
+	<form action="http://localhost:8080/o2o-demo/api/location!remove.action" method="post">
+		版本：
+		<input type="text" name="ver" value="1.0">
+		<br>
+		手机：
+		<input type="text" name="mobile" value="18659255000">
+		<br>
+		请求内容：
+		<input type="text" name="body" value='' size="80">
+		<br>
+		验证：
+		<input type="text" name="sign" value=13ed0bef244fc38cb1d288b4c5e7966a size="32">
+		<br>
+		<input type="submit" name="提交">
+	</form>
+	<br>
+	<hr>
+	<br>
+
+
+</body>
+</html>
