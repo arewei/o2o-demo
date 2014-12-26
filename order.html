@@ -27,8 +27,8 @@
 	<br>
 	<hr>
 	<br>
-	
-	
+
+
 
 	2. 洗车员工接单
 	<form action="http://localhost:8080/o2o-demo/api/order!receive.action" method="post">
@@ -108,7 +108,7 @@
 		<br>
 		请求内容：
 		<input type="text" name="body"
-			value='{"id":3,"orderPays":[{"payAmount":600,"payType":"BALANCE"},{"payAmount":900,"payType":"ALIPAY"},{"couponId":3,"payType":"COUPON"}]}'
+			value='{"orderId":3,"orderPays":[{"payAmount":600,"payType":"BALANCE"},{"payType":"ALIPAY"},{"couponId":3}]}'
 			size="150">
 		<br>
 		验证：
@@ -139,8 +139,8 @@
 	<br>
 	<hr>
 	<br>
-	
-	
+
+
 	7. 指定洗车员提交订单
 	<form action="http://localhost:8080/o2o-demo/api/order!createByAssign.action" method="post">
 		版本：
@@ -153,6 +153,27 @@
 		<input type="text" name="body"
 			value='{"workerId":1,"productId":1,"carLicenseNo":"闽D12345","lng":24.45259,"lat":118.079932,"addr":"洗车地址","serviceDate":"2015-01-01","serviceTime":"12:00"}'
 			size="150">
+		<br>
+		验证：
+		<input type="text" name="sign" value="d4535430b87e148b01546e08b94d19cd" size="32">
+		<br>
+		<input type="submit" name="提交">
+	</form>
+	<br>
+	<hr>
+	<br>
+
+
+	8. 洗车员获取正在等待接单的订单
+	<form action="http://localhost:8080/o2o-demo/api/order!findWaitOrder.action" method="post">
+		版本：
+		<input type="text" name="ver" value="1.0">
+		<br>
+		手机：
+		<input type="text" name="mobile" value="18659255016">
+		<br>
+		请求内容：
+		<input type="text" name="body" value='{"workerId":1}' size="150">
 		<br>
 		验证：
 		<input type="text" name="sign" value="d4535430b87e148b01546e08b94d19cd" size="32">
