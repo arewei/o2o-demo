@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>交易相关DEMO</title>
+</head>
+<body>
+	1. 客户创建交易记录，tradeType=DEPOSIT：充值，payType=ALIPAY（支付宝）或者UPMP（银联）
+	<form action="http://localhost:8080/o2o-demo/api/trade!add.action" method="post">
+		版本：
+		<input type="text" name="ver" value="1.0">
+		<br>
+		手机：
+		<input type="text" name="mobile" value="18659255016">
+		<br>
+		请求内容：
+		<input type="text" name="body" value='{"amount":10000,"tradeType":"DEPOSIT","detail":"XXX客户充值","payType":"ALIPAY"}'
+			size="80">
+		<br>
+		验证：
+		<input type="text" name="sign" value="f3f487d1730e3270b0701927a8e47118" size="32">
+		<br>
+		<input type="submit" name="提交">
+	</form>
+	<br>
+	<hr>
+	<br>
+
+	2. 客户创建交易记录，tradeType=PAY_ORDER：支付订单，payType=ALIPAY（支付宝）或者UPMP（银联）
+	<form action="http://localhost:8080/o2o-demo/api/trade!add.action" method="post">
+		版本：
+		<input type="text" name="ver" value="1.0">
+		<br>
+		手机：
+		<input type="text" name="mobile" value="18659255016">
+		<br>
+		请求内容：
+		<input type="text" name="body"
+			value='{"amount":2000,"orderId":9,"tradeType":"PAY_ORDER","detail":"XXX订单支付","payType":"ALIPAY"}' size="80">
+		<br>
+		验证：
+		<input type="text" name="sign" value="f3f487d1730e3270b0701927a8e47118" size="32">
+		<br>
+		<input type="submit" name="提交">
+	</form>
+	<br>
+	<hr>
+	<br>
+
+
+	3. 客户创建交易记录，tradeType=GIFT：送洗车卷，payType=ALIPAY（支付宝）或者UPMP（银联）
+	<form action="http://localhost:8080/o2o-demo/api/trade!add.action" method="post">
+		版本：
+		<input type="text" name="ver" value="1.0">
+		<br>
+		手机：
+		<input type="text" name="mobile" value="18659255016">
+		<br>
+		请求内容：
+		<input type="text" name="body"
+			value='{"amount":500,"giftId":3,"tradeType":"GIFT","detail":"送给XXX手机XX洗车卷XX张","payType":"UPMP"}' size="80">
+		<br>
+		验证：
+		<input type="text" name="sign" value="f3f487d1730e3270b0701927a8e47118" size="32">
+		<br>
+		<input type="submit" name="提交">
+	</form>
+	<br>
+	<hr>
+	<br>
+
+	4. 查询充值记录，state=NOT_PAID，充值未完成；state=PAID，充值已完成
+	<form action="http://localhost:8080/o2o-demo/api/trade!findDeposit.action" method="post">
+		版本：
+		<input type="text" name="ver" value="1.0">
+		<br>
+		手机：
+		<input type="text" name="mobile" value="18659255016">
+		<br>
+		请求内容：
+		<input type="text" name="body" value='{"state":"NOT_PAID"}' size="80">
+		<br>
+		验证：
+		<input type="text" name="sign" value="833f10c7f4761984efe98fa72607b8b7" size="32">
+		<br>
+		<input type="submit" name="提交">
+	</form>
+	<br>
+	<hr>
+	<br>
+
+
+
+</body>
+</html>
