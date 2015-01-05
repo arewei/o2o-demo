@@ -2,17 +2,17 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>洗车工人相关DEMO</title>
+<title>洗车员相关DEMO</title>
 </head>
 <body>
 
-	1. 查找在上班的洗车工人
+	1. 查找在上班的洗车员，系统默认配置查找半径10公里内的
 	<form action="http://localhost:8080/o2o-demo/api/worker!findOnDuty.action" method="post">
 		版本：
 		<input type="text" name="ver" value="1.0">
 		<br>
 		请求内容：
-		<input type="text" name="body" value='{"lng":118.079932,"lat":24.45259,"radius":10000}' size="80">
+		<input type="text" name="body" value='{"lng":118.079932,"lat":24.45259}' size="80">
 		<br>
 		验证：
 		<input type="text" name="sign" value="119a1cc43acc0c26cc7acd6b45296879" size="32">
@@ -23,16 +23,13 @@
 	<hr>
 	<br>
 	
-	2. 查找某个洗车工人的评论信息
+	2. 查找某个洗车员的评论信息
 	<form action="http://localhost:8080/o2o-demo/api/worker!comment.action" method="post">
 		版本：
 		<input type="text" name="ver" value="1.0">
 		<br>
-		手机：
-		<input type="text" name="employeeNo" value="002">
-		<br>
 		请求内容：
-		<input type="text" name="body" value='{"currentPageNum":1,"pageSize":10}' size="80">
+		<input type="text" name="body" value='{"currentPageNum":1,"pageSize":10,"workerId":13}' size="80">
 		<br>
 		验证：
 		<input type="text" name="sign" value="e8d4d2b9b1f40916705324434ab13731" size="32">
@@ -49,7 +46,7 @@
 		版本：
 		<input type="text" name="ver" value="1.0">
 		<br>
-		手机：
+		洗车员编号：
 		<input type="text" name="employeeNo" value="003">
 		<br>
 		请求内容：
@@ -69,7 +66,47 @@
 		版本：
 		<input type="text" name="ver" value="1.0">
 		<br>
-		手机：
+		洗车员编号：
+		<input type="text" name="employeeNo" value="002">
+		<br>
+		请求内容：
+		<input type="text" name="body" value='' size="80">
+		<br>
+		验证：
+		<input type="text" name="sign" value="d17a038e7cd27718eb2f236e349bc53b" size="32">
+		<br>
+		<input type="submit" name="提交">
+	</form>
+	<br>
+	<hr>
+	<br>
+
+	5. 洗车员当日收入、接单数
+	<form action="http://localhost:8080/o2o-demo/api/worker!today.action" method="post">
+		版本：
+		<input type="text" name="ver" value="1.0">
+		<br>
+		洗车员编号：
+		<input type="text" name="employeeNo" value="002">
+		<br>
+		请求内容：
+		<input type="text" name="body" value='' size="80">
+		<br>
+		验证：
+		<input type="text" name="sign" value="d17a038e7cd27718eb2f236e349bc53b" size="32">
+		<br>
+		<input type="submit" name="提交">
+	</form>
+	<br>
+	<hr>
+	<br>
+
+	6. 洗车员总收入，本月收入，昨天收入，7天接单数，星级
+	<form action="http://localhost:8080/o2o-demo/api/worker!info.action" method="post">
+		版本：
+		<input type="text" name="ver" value="1.0">
+		<br>
+		洗车员编号：
 		<input type="text" name="employeeNo" value="002">
 		<br>
 		请求内容：
