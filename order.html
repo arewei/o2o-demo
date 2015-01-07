@@ -92,7 +92,7 @@
 	<br>
 	（2）orderPays，JSON数组，指定采用的支付的各种方式和金额，payAmount=支付的金额，payType=支付的方式，couponId=采用的洗车卷的id
 	<br>
-	（3）支付方式，BALANCE=余额支付，ALIPAY=支付宝，UPMP=银联支付，COUPON=洗车卷支付，前三种支付方式，需指定支付的金额；洗车卷，需指定洗车卷的id
+	（3）支付方式，BALANCE=余额支付，ALIPAY=支付宝，UPMP=银联支付，WXPAY=微支付，COUPON=洗车卷支付，前三种支付方式，需指定支付的金额；洗车卷，需指定洗车卷的id
 	<br>
 	（4）所包含的支付方式，金额总和，必须等于洗车金额
 	<form action="http://localhost:8080/o2o-demo/api/order!pay.action" method="post">

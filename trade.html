@@ -5,7 +5,7 @@
 <title>交易相关DEMO</title>
 </head>
 <body>
-	1. 客户创建交易记录，tradeType=DEPOSIT：充值，payType=ALIPAY（支付宝）或者UPMP（银联）
+	1. 客户创建交易记录，tradeType=DEPOSIT：充值，payType=ALIPAY（支付宝）、UPMP（银联）或者WXPAY（微支付）
 	<form action="http://localhost:8080/o2o-demo/api/trade!add.action" method="post">
 		版本：
 		<input type="text" name="ver" value="1.0">
@@ -26,7 +26,7 @@
 	<hr>
 	<br>
 
-	2. 客户创建交易记录，tradeType=PAY_ORDER：支付订单，payType=ALIPAY（支付宝）或者UPMP（银联）
+	2. 客户创建交易记录，tradeType=PAY_ORDER：支付订单，payType=ALIPAY（支付宝）、UPMP（银联）或者WXPAY（微支付）
 	<form action="http://localhost:8080/o2o-demo/api/trade!add.action" method="post">
 		版本：
 		<input type="text" name="ver" value="1.0">
