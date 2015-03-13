@@ -2,17 +2,20 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>App相关DEMO</title>
+<title>广告相关DEMO</title>
 </head>
-<body>findLatest
+<body>
 
-	1. 查找APP信息
-	<form action="http://localhost:8080/o2o-demo/api/app-info!findAppInfo.action" method="post">
+	1. 查找最新的广告
+	<form action="http://localhost:8080/o2o-demo/api/ad!findLatest.action" method="post">
 		版本：
 		<input type="text" name="ver" value="1.0">
 		<br>
+		手机：
+		<input type="text" name="mobile" value="18659255016">
+		<br>
 		请求内容：
-		<input type="text" name="body" value='{"appPlatformType":"IOS","appUserType":"CUSTOMER"}' size="80">
+		<input type="text" name="body" value='' size="80">
 		<br>
 		验证：
 		<input type="text" name="sign" value="a5b39a750190e60709a37443205f07f8" size="32">
